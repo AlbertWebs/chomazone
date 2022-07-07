@@ -26,10 +26,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', [App\Http\Controllers\Auth\LoginController::class, 'homes'])->name('mobile.authenticated');
+Route::get('/select-device', [App\Http\Controllers\HomeController::class, 'select_device'])->name('select-device');
 
 
-Route::group(['prefix'=>'chomazone'], function(){
+// Route::group(['prefix'=>'chomazone'], function(){
 
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
     Route::get('/menu', [App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
@@ -57,7 +57,7 @@ Route::group(['prefix'=>'chomazone'], function(){
     Route::get('/facebook/redirect', [LoginController::class, 'facebookRedirect']);
     Route::get('/google', [LoginController::class, 'google']);
     Route::get('/google/redirect', [LoginController::class, 'googleRedirect']);
-});
+// });
 
 
 
